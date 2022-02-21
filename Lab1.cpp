@@ -1,6 +1,4 @@
 //lab1
-//lab1
-//lab1
-//lab1
+//labWWWWW
 //lab1
 //lab1
