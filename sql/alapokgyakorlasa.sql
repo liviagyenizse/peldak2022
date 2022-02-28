@@ -1,7 +1,8 @@
 use demowebshop;
 
-select v.Nev as VevoNeve, t.Nev as TermekNeve,
-	mt.db, t.Ar, mt.db*t.Ar as Fizetendo
+select v.Nev as VevoNeve,
+	sum(mt.db*t.Ar) as Fizetendo, count(*) as TetelekSzama,
+    max(t.Ar) LegdragabbTermekDarabAra
 from Vevo v
 join Megrendeles m
 	on v.Id = m.VevoId
@@ -9,5 +10,5 @@ join MegrendelesTetel mt
 	on mt.MegrendelesId = m.Id
 join Termek t
 	on mt.TermekId = t.Id
-where mt.db > 1
+group by v.Nev
 order by v.Nev desc;
