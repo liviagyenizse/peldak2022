@@ -12,7 +12,7 @@ DROP VIEW IF EXISTS BestTermek;
 CREATE TABLE Termek (
   Id int PRIMARY KEY AUTO_INCREMENT,
   Nev nvarchar(50) NOT NULL,
-  Raktarkeszlet int NOT NULL DEFAULT 50,
+  Raktarkeszlet int NOT NULL DEFAULT 0,
   Ar int
 );
 
